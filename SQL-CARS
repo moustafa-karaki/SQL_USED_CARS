@@ -1,0 +1,57 @@
+SELECT *
+FROM AUTOS;
+
+
+
+/* WHICH YEAR MADE THE MOST EXPENSIVE CARS */
+SELECT YEAROFREGISTRATION, AVG(PRICE)
+FROM autos
+group by yearOfRegistration
+ORDER BY AVG(PRICE) DESC;
+/* 1967 */
+
+
+
+
+/* WHICH BRAND HAS THE MOST EXPENSIVE USED CARS*/
+SELECT brand, avg(price)
+from autos
+group by brand
+order by avg(price) desc;
+/* PORSHE */
+
+
+
+/* which is the cheapest car brand in the 2000*/
+select brand,avg(price)
+from autos
+where yearOfRegistration > 2000
+group by brand 
+order by avg(price) asc;
+/* DAEWOO */
+
+
+
+/* which year produced the most cars*/
+select yearofregistration, count(name)
+from autos
+group by yearOfRegistration
+order by count(NAME) DESC;
+/*2000*/
+
+
+/* WHICH GEARBOX IS MORE POPULAR IN THE MARKET*/
+SELECT GEARBOX, count(NAME)
+FROM AUTOS
+group by GEARBOX
+ORDER BY count(NAME) DESC;
+/* MANUAL*/
+
+
+
+/* which vehicle type is the most expensive*/
+select vehicletype, avg(price)
+from autos
+group by vehicletype
+order by avg(price) DESC;
+/* COUPE */
